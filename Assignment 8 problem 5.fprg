@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ABRAHAM.CISNEROS"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-04-21 08:19:29 PM"/>
+        <attribute name="created" value="QUJSQUhBTS5DSVNORVJPUztOVVNaMjg4Mjk1Mjg7MjAyMS0wNC0yMTswODowNzowNSBQTTszMTky"/>
+        <attribute name="edited" value="QUJSQUhBTS5DSVNORVJPUztOVVNaMjg4Mjk1Mjg7MjAyMS0wNC0yMTswODoxOToyOSBQTTsyOzMzMTA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="response" type="String" array="False" size=""/>
+            <output expression="&quot;Would you like to compute your income tax?: &quot;" newline="True"/>
+            <input variable="response"/>
+            <while expression="response = &quot;Yes&quot; or response = &quot;yes&quot;">
+                <declare name="income" type="Real" array="False" size=""/>
+                <declare name="taxrate" type="Real" array="False" size=""/>
+                <declare name="taxowed" type="Real" array="False" size=""/>
+                <output expression="&quot;Please enter your gross income: &quot;" newline="True"/>
+                <input variable="income"/>
+                <if expression="income &gt; 500000">
+                    <then>
+                        <assign variable="taxrate" expression="0.30"/>
+                    </then>
+                    <else>
+                        <if expression="income &gt; 200000 and income &lt;= 500000">
+                            <then>
+                                <assign variable="taxrate" expression="0.20"/>
+                            </then>
+                            <else/>
+                        </if>
+                    </else>
+                </if>
+                <assign variable="taxowed" expression="income * taxrate"/>
+                <output expression="income &amp; &quot;,&quot; &amp; taxrate &amp; &quot;,&quot; &amp; taxowed" newline="True"/>
+                <output expression="&quot;Would you like to run this program again?: &quot;" newline="True"/>
+                <input variable="response"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>

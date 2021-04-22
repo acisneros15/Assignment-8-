@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ABRAHAM.CISNEROS"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-04-21 04:55:45 PM"/>
+        <attribute name="created" value="QUJSQUhBTS5DSVNORVJPUztOVVNaMjg4Mjk1Mjg7MjAyMS0wNC0yMTswNDo0NzoxMSBQTTszMTg5"/>
+        <attribute name="edited" value="QUJSQUhBTS5DSVNORVJPUztOVVNaMjg4Mjk1Mjg7MjAyMS0wNC0yMTswNDo1NTo0NSBQTTsxOzMzMDM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="start" type="Integer" array="False" size=""/>
+            <declare name="stop" type="Integer" array="False" size=""/>
+            <declare name="increment" type="Integer" array="False" size=""/>
+            <declare name="count" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter a start value: &quot;" newline="True"/>
+            <input variable="start"/>
+            <output expression="&quot;Enter a stop value: &quot;" newline="True"/>
+            <input variable="stop"/>
+            <output expression="&quot;Enter an increment value: &quot;" newline="True"/>
+            <input variable="increment"/>
+            <assign variable="count" expression="start"/>
+            <while expression="count &lt;= stop">
+                <output expression="count" newline="True"/>
+                <assign variable="count" expression="count + increment"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>

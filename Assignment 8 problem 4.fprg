@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ABRAHAM.CISNEROS"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-04-21 08:06:52 PM"/>
+        <attribute name="created" value="QUJSQUhBTS5DSVNORVJPUztOVVNaMjg4Mjk1Mjg7MjAyMS0wNC0yMTswNTowOToyOSBQTTszMTk3"/>
+        <attribute name="edited" value="QUJSQUhBTS5DSVNORVJPUztOVVNaMjg4Mjk1Mjg7MjAyMS0wNC0yMTswNTowOTozNCBQTTsxO0FCUkFIQU0uQ0lTTkVST1M7TlVTWjI4ODI5NTI4OzIwMjEtMDQtMjE7MDQ6NTU6NTUgUE07QXNzaWdubWVudCA4IHByb2JsZW0gMy5mcHJnOzkwOTc="/>
+        <attribute name="edited" value="QUJSQUhBTS5DSVNORVJPUztOVVNaMjg4Mjk1Mjg7MjAyMS0wNC0yMTswODowNjo1MiBQTTszOzMzMDM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="response" type="String" array="False" size=""/>
+            <declare name="price" type="Real" array="False" size=""/>
+            <declare name="quantity" type="Real" array="False" size=""/>
+            <declare name="item" type="String" array="False" size=""/>
+            <output expression="&quot;Would you like to run the program?: &quot;" newline="True"/>
+            <input variable="response"/>
+            <while expression="response = &quot;yes&quot; or response = &quot;Yes&quot;">
+                <output expression="&quot;Enter item name: &quot;" newline="True"/>
+                <input variable="item"/>
+                <output expression="&quot;Enter price for item: &quot;" newline="True"/>
+                <input variable="price"/>
+                <output expression="&quot;Enter quantity: &quot;" newline="True"/>
+                <input variable="quantity"/>
+                <declare name="extprice" type="Real" array="False" size=""/>
+                <assign variable="extprice" expression="price * quantity"/>
+                <declare name="discount" type="Real" array="False" size=""/>
+                <declare name="discprice" type="Real" array="False" size=""/>
+                <declare name="tax" type="Real" array="False" size=""/>
+                <if expression="extprice &gt; 10000">
+                    <then>
+                        <assign variable="discount" expression=".10"/>
+                    </then>
+                    <else>
+                        <if expression="extprice &gt; 5000">
+                            <then>
+                                <assign variable="discount" expression=".05"/>
+                            </then>
+                            <else>
+                                <assign variable="discount" expression=".02"/>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+                <declare name="discamount" type="Real" array="False" size=""/>
+                <assign variable="discamount" expression="extprice * discount"/>
+                <assign variable="discprice" expression="extprice - discamount"/>
+                <assign variable="tax" expression="discprice * .07"/>
+                <output expression="item &amp; &quot;,&quot; &amp; extprice &amp; &quot;,&quot; &amp; discount &amp; &quot;,&quot; &amp; discprice &amp; &quot;,&quot; &amp; tax" newline="True"/>
+                <output expression="&quot;Would you like to run the program again?: &quot;" newline="True"/>
+                <input variable="response"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
